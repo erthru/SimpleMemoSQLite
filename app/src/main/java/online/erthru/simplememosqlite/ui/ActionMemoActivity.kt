@@ -69,6 +69,8 @@ class ActionMemoActivity : AppCompatActivity() {
                     .setMessage("Delete this memo ?")
                     .setPositiveButton("DELETE",DialogInterface.OnClickListener { dialogInterface, i ->
                         DatabaseHelper(this).deleteMemo(id)
+                        Toast.makeText(applicationContext,"Memo deleted",Toast.LENGTH_SHORT).show()
+                        this.finish()
                     })
                     .setNegativeButton("CANCEL",DialogInterface.OnClickListener { dialogInterface, i ->
                         dialogInterface.dismiss()
